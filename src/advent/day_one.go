@@ -1,10 +1,7 @@
 package advent
 
 import (
-	"bufio"
 	"fmt"
-	"log"
-	"os"
 	"strconv"
 )
 
@@ -12,19 +9,32 @@ import (
 func CalcFrequency() {
 	fmt.Println("Frequency calculator")
 
-	if file, err := os.Open("/Users/sakthivel/data/sakthi/sandbox/go-workspace/src/advent/inputs/day_one.txt"); err != nil {
-		log.Fatal(err)
-		defer file.Close()
-	} else if scanner := bufio.NewScanner(file); scanner == nil {
-		log.Fatal(" scanner is nil")
-	} else {
-		sum := 0
-		num := 0
-		for scanner.Scan() {
-			num, _ = strconv.Atoi(scanner.Text())
-			sum += num
-		}
-		fmt.Println("sum =", sum)
+	data := ReadDataFromFile("day_one.txt")
+	noL := len(data)
+
+	freqMap := make(map[int]int)
+	sum := 0
+
+	arr := []int{}
+	for index := 0; index < len(data); index++ {
+		num, _ := strconv.Atoi(data[index])
+		arr = append(arr, num)
 	}
+	for i := 0; i < noL; i++ {
+		sum += arr[i]
+		freqMap[sum]++
+	}
+	fmt.Println("sum =", sum)
+	fmt.Println(freqMap)
+
+	for i := 0; i < noL; i++ {
+		sum += arr[i]
+		freqMap[sum]++
+		if freqMap[sum] == 2 {
+			fmt.Print(" Freq =", sum)
+			break
+		}
+	}
+	fmt.Println(freqMap)
 
 }

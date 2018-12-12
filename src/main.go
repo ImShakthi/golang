@@ -15,13 +15,19 @@ func main() {
 	} else {
 		adventOfCode()
 	}
+
+	//snippets.PatternMatcher()
 }
 
 func adventOfCode() {
-	day := 1
+	day := 3
 	switch day {
 	case 1:
 		advent.CalcFrequency()
+	case 2:
+		advent.CalcThreshold()
+	case 3:
+		advent.ClaimMatrix()
 	default:
 	}
 }
