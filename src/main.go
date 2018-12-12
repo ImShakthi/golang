@@ -20,7 +20,7 @@ func main() {
 }
 
 func adventOfCode() {
-	day := 3
+	day := 1
 	switch day {
 	case 1:
 		advent.CalcFrequency()

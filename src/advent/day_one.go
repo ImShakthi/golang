@@ -20,21 +20,21 @@ func CalcFrequency() {
 		num, _ := strconv.Atoi(data[index])
 		arr = append(arr, num)
 	}
+	//fmt.Println(arr)
 	for i := 0; i < noL; i++ {
-		sum += arr[i]
+		sum = sum + arr[i]
 		freqMap[sum]++
 	}
 	fmt.Println("sum =", sum)
-	fmt.Println(freqMap)
 
-	for i := 0; i < noL; i++ {
-		sum += arr[i]
-		freqMap[sum]++
-		if freqMap[sum] == 2 {
-			fmt.Print(" Freq =", sum)
+	for i := 0; ; {
+		sum = sum + arr[i]
+		if freqMap[sum] == 1 {
+			fmt.Println(">>>> Freq =", sum)
 			break
 		}
+		i++
+		i = i % noL
+		freqMap[sum]++
 	}
-	fmt.Println(freqMap)
-
 }
