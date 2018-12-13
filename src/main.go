@@ -20,7 +20,7 @@ func main() {
 }
 
 func adventOfCode() {
-	day := 1
+	day := 4
 	switch day {
 	case 1:
 		advent.CalcFrequency()
@@ -28,6 +28,8 @@ func adventOfCode() {
 		advent.CalcThreshold()
 	case 3:
 		advent.ClaimMatrix()
+	case 4:
+		advent.ReposeRecord()
 	default:
 	}
 }

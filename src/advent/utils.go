@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 )
 
 // ReadDataFromFile is to read data from file
@@ -24,4 +25,10 @@ func ReadDataFromFile(fileName string) (data []string) {
 		return data
 	}
 	return nil
+}
+
+// ConvInt method to convert string into int
+func ConvInt(data string) int {
+	number, _ := strconv.Atoi(data)
+	return number
 }
