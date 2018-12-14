@@ -5,6 +5,7 @@ import (
 	"basics"
 	"fmt"
 	"rectangle"
+	//"snippets"
 )
 
 func main() {
@@ -15,12 +16,13 @@ func main() {
 	} else {
 		adventOfCode()
 	}
-
+	//snippets.Sandbox()
 	//snippets.PatternMatcher()
+	// basics.MethodsFn()
 }
 
 func adventOfCode() {
-	day := 4
+	day := 5
 	switch day {
 	case 1:
 		advent.CalcFrequency()
@@ -30,6 +32,8 @@ func adventOfCode() {
 		advent.ClaimMatrix()
 	case 4:
 		advent.ReposeRecord()
+	case 5:
+		advent.AlchemicalReduction()
 	default:
 	}
 }
