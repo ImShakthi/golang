@@ -32,15 +32,18 @@ func getMiniPolymer(data string) int {
 	miniPolymerArr := []int{}
 
 	for lowCaps, bigCaps := 'a', 'A'; lowCaps <= 'z'; {
-		fmt.Println("Started for ", string(lowCaps))
 		if strings.Contains(data, string(lowCaps)) || strings.Contains(data, string(bigCaps)) {
+			fmt.Println("Started for ", string(lowCaps))
 			updatedData := strings.Replace(data, string(lowCaps), "", -1)
 			updatedData = strings.Replace(updatedData, string(bigCaps), "", -1)
 
 			polymerUnit := getPolymerUnits(updatedData)
 			miniPolymerArr = append(miniPolymerArr, polymerUnit)
+			fmt.Println("Ended for ", string(lowCaps))
+		} else {
+			fmt.Println(">>> Skipped ", string(lowCaps))
+
 		}
-		fmt.Println("Ended for ", string(lowCaps))
 		lowCaps++
 		bigCaps++
 	}
