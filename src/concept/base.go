@@ -25,6 +25,8 @@ func calculateExpense() {
 	c1 := Contract{1001, 2500}
 	c2 := Contract{1002, 2500}
 
+	p1.Test()
+
 	employees := []SalaryCalculator{p1, p2, c1, c2}
 	fmt.Println("Salary=", calculateSalary(employees))
 }

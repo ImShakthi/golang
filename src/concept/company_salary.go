@@ -1,6 +1,8 @@
 package concept
 
-// import ("fmt")
+import (
+	"fmt"
+)
 
 // SalaryCalculator interface
 type SalaryCalculator interface {
@@ -23,6 +25,11 @@ type Contract struct {
 // CalculateSalary func
 func (p Permanent) CalculateSalary() int {
 	return p.basicPay + p.pf
+}
+
+// Test func
+func (p Permanent) Test() {
+	fmt.Println("Test")
 }
 
 // CalculateSalary func for contract
